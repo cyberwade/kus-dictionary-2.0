@@ -1,0 +1,54 @@
+Ты — опытный преподаватель испанского языка.
+
+Входные параметры:
+keyphrase_id: {keyphrase_id}
+keyphrase_esp: "{keyphrase_esp}"
+keyphrase_rus: "{keyphrase_rus}"
+keyfrase_comment: "{keyfrase_comment}"
+additional_comment: "{additional_comment}"
+
+Задача:
+Составь одно естественное предложение на испанском языке (sentence_esp) с использованием выражения keyphrase_esp (перевод: keyphrase_rus) и его корректный перевод на русский язык (sentence_rus) для тренировки перевода (RU → ES или ES → RU) в контексте.
+
+Обязательные правила:
+1) {additional_comment}.
+2) Учитывай комментарий keyfrase_comment при составлении предложения.
+3) Предложение должно быть естественным, логичным и контекстным.
+4) Используй только грамматику из списка разрешенной.
+5) Не используй грамматику выше уровня B1.
+6) Лексика может быть сложной, но грамматика — нет.
+7) Если используешь Subjuntivo, допускается только Presente de Subjuntivo.
+8) Не используй Imperfecto de Subjuntivo.
+9) Не усложняй синтаксис длинными вложенными предложениями.
+
+Разрешённая грамматика:
+— Presente de Indicativo  
+— Pretérito Perfecto  
+— Pretérito Indefinido  
+— Pretérito Imperfecto  
+— Futuro Simple  
+— Condicional Simple  
+— Imperativo positivo y negativo  
+— Presente de Subjuntivo (только базовые триггеры: quiero que, es importante que, para que)
+
+Строго запрещено:
+— Imperfecto de Subjuntivo  
+— Condicional tipo 2  
+— Сложный estilo indirecto  
+— Subjuntivo pasado  
+— Продвинутые структуры уровня B2  
+— Сложная voz pasiva  
+
+Верни результат строго в формате JSON без пояснений и без дополнительного текста:
+
+{{
+  "keyphrase_id": <keyphrase_id>,
+  "keyphrase_esp": "<keyphrase_esp>",
+  "keyphrase_rus": "<keyphrase_rus>",
+  "keyfrase_comment": "<keyfrase_comment>",
+  "additional_comment": "<additional_comment>",
+  "sentence_esp": "<sentence_esp>",
+  "sentence_rus": "<sentence_rus>"
+}}
+
+

@@ -1,0 +1,252 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.card-number {
+  font-weight: 600;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.card-comment {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Общая высота ряда иконок (карточка и предложения) для выравнивания */
+.card-header-right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 24px;
+}
+
+.card-header-right .card-action-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.card-header-right .card-action-icon:hover {
+  color: var(--text);
+}
+.card-header-right .card-action-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card-hide-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  min-height: 24px;
+  flex-shrink: 0;
+}
+.card-hide-toggle:has(.toggle-input:disabled) {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* Переключатель сокрытия: высота 16px, только внутри .card */
+.card .card-hide-switch {
+  width: 1.875rem;
+  height: 16px;
+  min-width: 1.875rem;
+  min-height: 16px;
+  border-radius: 4px;
+}
+.card .card-hide-switch::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: calc(16px - 4px);
+  height: calc(16px - 4px);
+  border-radius: 4px;
+  background: var(--border);
+  transition: transform 0.2s ease;
+  transform: translateY(-50%);
+}
+.card .card-hide-toggle .toggle-input:checked + .card-hide-switch {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.card .card-hide-toggle .toggle-input:checked + .card-hide-switch::after {
+  transform: translate(14px, -50%);
+}
+.card .card-hide-toggle .toggle-input:focus-visible + .card-hide-switch {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.card-add-icon {
+  flex-shrink: 0;
+  padding: 0.35rem;
+  color: var(--muted);
+}
+.card-add-icon:hover {
+  color: var(--text);
+}
+
+.card-divider {
+  height: 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.4rem 0;
+  opacity: 0.8;
+}
+
+.card-block {
+  margin-bottom: 0.4rem;
+}
+.card-block:last-child {
+  margin-bottom: 0;
+}
+.card-block-expression {
+  margin-bottom: 0;
+}
+
+.card-expression-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.card-expression-row .showable {
+  flex: 1;
+  min-width: 0;
+}
+.card-expression-row .card-add-icon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.card-block-sentences {
+  margin-top: 0.2rem;
+}
+
+.card-muted {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.showable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.showable-rus {
+  display: block;
+}
+
+.showable-toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  color: var(--link);
+  padding: 0;
+  font-size: 0.95rem;
+  text-decoration: none;
+  align-self: flex-start;
+  cursor: pointer;
+}
+.showable-toggle:hover {
+  text-decoration: underline;
+}
+
+.sentence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sentence-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  margin-bottom: 0.25rem;
+}
+.sentence-item:last-child {
+  margin-bottom: 0;
+}
+
+.sentence-item .showable {
+  flex: 1;
+  min-width: 0;
+}
+
+.sentence-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+
+.sentence-action-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.sentence-action-icon:hover {
+  color: var(--text);
+}
+.sentence-action-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 480px) {
+  .card-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .card-header-left {
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 0;
+  }
+  .sentence-item {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}

@@ -1,0 +1,71 @@
+.module-chooser {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.module-chooser-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.module-chooser-subtitle {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.module-chooser-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.module-chooser-btn {
+  min-width: 12rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.module-chooser-btn:hover {
+  background: var(--border);
+  border-color: var(--muted);
+}
+
+.module-chooser-btn-expressions {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.module-chooser-btn-expressions:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.module-chooser-btn-historias {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.module-chooser-btn-historias:hover {
+  background: rgba(74, 124, 89, 0.1);
+}
+
+@media (min-width: 768px) {
+  .module-chooser-title {
+    font-size: 1.75rem;
+  }
+}
