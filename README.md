@@ -97,7 +97,7 @@ gcloud projects add-iam-policy-binding $(gcloud config get-value project) \
 ### Деплой
 
 ```bash
-gcloud run deploy kus-ex-pert-dictionary \
+gcloud run deploy <SERVICE_NAME> \
   --source . \
   --region europe-west1 \
   --allow-unauthenticated \
@@ -339,3 +339,4 @@ PostgreSQL. Схема таблиц:
 | [docs/Кто-заполняет-БТ-и-ТЗ.md](docs/Кто-заполняет-БТ-и-ТЗ.md) | **Кто что заполняет в БТ и ТЗ** — разбор разделов бизнес-требований и ТЗ по ответственным (PM, заказчик, аналитик, разработчик); порядок заполнения и краткая сводка по ролям. |
 
 README (этот файл) — документация для разработчика: запуск, структура кода, вызовы API, переменные окружения, требования к БД.
+
