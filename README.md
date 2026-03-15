@@ -85,7 +85,7 @@ psql -f add_historia_sentences.sql
 
 ### Предварительные шаги
 
-1. Создайте секреты в Google Secret Manager: `OPENAI_API_KEY`, `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`.
+1. Создайте секреты в Google Secret Manager: `OPENAI_API_KEY`, `DB_HOST`, `DB_USER`, `DB_PASSWORD`.
 2. Выдайте сервис-аккаунту Cloud Run роль **Secret Manager Secret Accessor**:
 
 ```bash
@@ -101,7 +101,7 @@ gcloud run deploy <SERVICE_NAME> \
   --source . \
   --region europe-west1 \
   --allow-unauthenticated \
-  --set-secrets "OPENAI_API_KEY=OPENAI_API_KEY:latest,DB_HOST=DB_HOST:latest,DB_NAME=DB_NAME:latest,DB_USER=DB_USER:latest,DB_PASSWORD=DB_PASSWORD:latest"
+  --set-secrets "OPENAI_API_KEY=OPENAI_API_KEY:latest,DB_HOST=DB_HOST:latest,DB_USER=DB_USER:latest,DB_PASSWORD=DB_PASSWORD:latest"
 ```
 
 Cloud Run собирает образ из `Dockerfile`, пушит в Artifact Registry и деплоит. Порт 8080 (стандартный для Cloud Run, задан в Dockerfile). Секреты из Secret Manager прокидываются как переменные окружения.
